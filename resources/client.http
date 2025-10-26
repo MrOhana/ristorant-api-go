@@ -1,0 +1,53 @@
+## Esse arquivo contém requisições HTTP para testar a API de clientes utilizados pelo
+## plugin REST Client do VSCode ou outras ferramentas similares.
+
+## Para usar corretamente, baixe o Plugin REST Client no VSCode.
+
+### BUSCA TODOS OS CLIENTES
+GET http://localhost:8000/clientes HTTP/1.1
+Content-Type: application/json
+
+
+### BUSCA UM CLIENTE ESPECÍFICO POR ID
+GET http://localhost:8000/clientes/3 HTTP/1.1
+Content-Type: application/json
+
+
+### CRIA UM NOVO CLIENTE
+POST http://localhost:8000/clientes HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "João Silva",
+    "nascimento": "1985-07-23",
+    "endereco": "Rua das Flores, 123, São Paulo, SP",
+    "telefone": "(11) 91234-5678"
+}
+
+
+### CRIA MAIS UM NOVO CLIENTE
+POST http://localhost:8000/clientes HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "Carlos Ribeiro",
+    "nascimento": "1988-09-16",
+    "endereco": "Rua Joao Conceicao, 1852, Rio de Janeiro, RJ",
+    "telefone": "(21) 95268-4588"
+}
+
+### ATUALIZA UM CLIENTE EXISTENTE POR ID
+PUT http://localhost:8000/clientes/3 HTTP/1.1
+Content-Type: application/json      
+
+{
+    "nome": "João Silva",
+    "nascimento": "1985-07-23",
+    "endereco": "Avenida Central, 456, São Paulo, SP",
+    "telefone": "(11) 98765-4321"
+}
+
+
+### DELETA UM CLIENTE POR ID
+DELETE http://localhost:8000/clientes/3 HTTP/1.1
+Content-Type: application/json
